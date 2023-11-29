@@ -1,0 +1,12 @@
+== react 설치 및, 프로젝트 생성
+node.js 설치
+npm install -g yarn
+npm install -g create-react-app
+create-react-app client
+cd client
+yarn start
+===
+  <React.StrictMode>
+    <App />
+  </React.StrictMode> 
+장재적 문제를 알아내기 위한 도구 --> 생명주기 함수를 여러번 실행하는 원인
