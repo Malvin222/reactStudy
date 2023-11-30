@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import SpreadOperator from './R011_SpreadOperator';
+import PropsObjVal from './R020_PropsObjVal';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
       <p>CSS 적용하기</p>
-      <SpreadOperator/>
+      <PropsObjVal ObjectJson={{react:"리액트", thwhundred:"200"}}/>
     </div>
   );
 }

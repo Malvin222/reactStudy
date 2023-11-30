@@ -10,3 +10,5 @@ yarn start
     <App />
   </React.StrictMode> 
 장재적 문제를 알아내기 위한 도구 --> 생명주기 함수를 여러번 실행하는 원인
+=== jquery 설치 R016
+npm install jquery
