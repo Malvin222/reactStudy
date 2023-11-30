@@ -1,13 +1,14 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import './App.css';
-import PropsObjVal from './R020_PropsObjVal';
+import InputGroup from './R045_ReactstrapInputGroup';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
       <p>CSS 적용하기</p>
-      <PropsObjVal ObjectJson={{react:"리액트", thwhundred:"200"}}/>
+      <InputGroup/>
     </div>
   );
 }

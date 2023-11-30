@@ -8,7 +8,16 @@ yarn start
 ===
   <React.StrictMode>
     <App />
-  </React.StrictMode> 
+  </React.StrictMode>
 장재적 문제를 알아내기 위한 도구 --> 생명주기 함수를 여러번 실행하는 원인
+
+초기 문서 작성 rce 컨트롤 스페이스
 === jquery 설치 R016
 npm install jquery
+
+== shallow-equal 설치 R029
+npm install shallow-equal
+
+== reactstarap, bootstrap 설치 R034
+npm install -save reactstrap
+npm install -save boottstrap

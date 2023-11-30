@@ -1,0 +1,24 @@
+import React, { Component } from 'react';
+import { Button, Card, CardBody, UncontrolledCollapse } from 'reactstrap';
+
+//Collapse 특정 영역을 펼치고 숨기는 기능 제공
+class R042_ReactstrapCollapse extends Component {
+  render() {
+    return (
+      <div>
+        <Button color="warning" id="toggle">
+            펼치기/접기
+        </Button>
+        <UncontrolledCollapse toggler="#toggle">
+            <Card>
+                <CardBody>
+                    REACT 200
+                </CardBody>
+            </Card>
+        </UncontrolledCollapse>
+      </div>
+    )
+  }
+}
+
+export default R042_ReactstrapCollapse
