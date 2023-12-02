@@ -29,3 +29,6 @@ npm install -save boottstrap
 
 ==sweetalert2 설치 R056
 npm install sweetalert2
+
+==Axios 설치
+npm install -save axios
