@@ -32,3 +32,6 @@ npm install sweetalert2
 
 ==Axios 설치
 npm install -save axios
+
+==redux 리듀서 설치 R078
+npm install --save redux
