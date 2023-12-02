@@ -1,13 +1,13 @@
 // import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 // import './App.css';
-import Promise from './R065_Promise';
+import ReactMouseOut from './R070_onMouseOut';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
-      <Promise/>
+      <ReactMouseOut/>
     </div>
   );
 }
