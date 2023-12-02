@@ -5,6 +5,11 @@ npm install -g create-react-app
 create-react-app client
 cd client
 yarn start
+
+해당 프로젝트 가져오기
+해당 폴더에서 
+npm install
+-> package.json에 있는 내역의 패키지를 가져옴
 ===
   <React.StrictMode>
     <App />
@@ -21,3 +26,6 @@ npm install shallow-equal
 == reactstarap, bootstrap 설치 R034
 npm install -save reactstrap
 npm install -save boottstrap
+
+==sweetalert2 설치 R056
+npm install sweetalert2
