@@ -1,13 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 // import './App.css';
-import AxiosPost from './R062_AxiosPost';
+import Promise from './R065_Promise';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
-      <AxiosPost/>
+      <Promise/>
     </div>
   );
 }
