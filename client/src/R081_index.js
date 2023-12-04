@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
+import { createStore } from 'redux';
 import App from './App';
 import './index.css';
 import reducers from './reducers';
 
-// 다중컬링구조 세가지 인자, 첫버째 스토어, 두번째 다음미들웨어, 세번째 액션
-const CallMiddleware = store => nextMiddle => action =>{
-  console.log('1. reducer 실행 전');
-  console.log('2. action.type : '+action.type+', store str :'+store.getState().data.str);
-  let result = nextMiddle(action);
-  console.log('3. reducer 실행 후');
-  console.log('4. action.type : '+action.type+', store str: '+store.getState().data.str);
-  return result;
-}
-const store = createStore(reducers, applyMiddleware(CallMiddleware));
+//createStore 함수의 파라미터로 reducers 폴더 경로를 넘김
+//리듀서 : reducers 폴더의 index.js에 데이터 초기값을 설정하고 데이터를 변경해주는 함수
+const store = createStore(reducers);
 
 const listener = () =>{
 //render함수를 listener 함수 내부에 위치
