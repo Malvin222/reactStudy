@@ -11,11 +11,10 @@ import HeaderAdmin from './Header/Header admin';
 import Footer from './Footer/Footer';
 
 // login
+import FloationPopulationList from './Floationg_population/floationPopulationList';
 import LoginForm from './LoginForm';
-
-import reactThrottle from './R095_reactThrottle';
-
 import reactRouter2 from './R089_reactRouter2';
+import reactThrottle from './R095_reactThrottle';
 
 class App extends Component {
   render () {
@@ -27,6 +26,7 @@ class App extends Component {
         <Route exact path='/' element={<LoginForm/>} />
         <Route exact path='/Throttle' Component={reactThrottle} />
         <Route exact path='/reactRouter2' Component={reactRouter2} />
+        <Route exact path='/FloationPopulationList' element={<FloationPopulationList/>} />
         </Routes>
         <Footer/>
       </div>

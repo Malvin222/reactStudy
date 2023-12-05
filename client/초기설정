@@ -38,3 +38,10 @@ npm install --save redux
 
 ==react -redux 설치
 npm install --save react-redux
+
+==라우터
+npm instaa --save react-router-dom 
+npm install --sava lodash
+
+==recharts LineChart 설치
+npm install --save recharts
