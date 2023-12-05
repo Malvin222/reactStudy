@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Routes } from "react-router-dom";
-import rechartsSimpleLineChart from './Floationg_population/recharsSimpleLineChart';
+
 // css
 import '../css/new.css';
 
@@ -27,7 +27,6 @@ class App extends Component {
         <Route exact path='/Throttle' Component={reactThrottle} />
         <Route exact path='/reactRouter2' Component={reactRouter2} />
         <Route exact path='/FloationPopulationList' element={<FloationPopulationList/>} />
-        <Route exact path='/rechartsSimpleLineChart' Component={rechartsSimpleLineChart} />
         </Routes>
         <Footer/>
       </div>

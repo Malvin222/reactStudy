@@ -40,7 +40,7 @@ npm install --save redux
 npm install --save react-redux
 
 ==라우터
-npm instaa --save react-router-dom 
+npm install --save react-router-dom 
 npm install --sava lodash
 
 ==recharts LineChart 설치
