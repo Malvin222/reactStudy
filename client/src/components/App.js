@@ -15,6 +15,7 @@ import FloationPopulationList from './Floationg_population/floationPopulationLis
 import LoginForm from './LoginForm';
 import reactRouter2 from './R089_reactRouter2';
 import reactThrottle from './R095_reactThrottle';
+import reactProxy from './R109_reactProxy';
 
 class App extends Component {
   render () {
@@ -28,6 +29,7 @@ class App extends Component {
         <Route exact path='/reactRouter2' Component={reactRouter2} />
         <Route exact path='/FloationPopulationList' element={<FloationPopulationList/>} />
         <Route exact path='/rechartsSimpleLineChart' Component={rechartsSimpleLineChart} />
+        <Route exact path='/reactProxy' Component={reactProxy} />
         </Routes>
         <Footer/>
       </div>
