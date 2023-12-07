@@ -1,0 +1,13 @@
+express 설치
+npm i -g express-generator
+express nodefolder
+npm install
+npm start
+
+pakage.json 추가
+  "developmnet": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "proxy" : "http://127.0.0.1:5000"
