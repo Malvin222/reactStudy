@@ -16,6 +16,8 @@ import LoginForm from './LoginForm';
 import reactRouter2 from './R089_reactRouter2';
 import reactThrottle from './R095_reactThrottle';
 import reactProxy from './R109_reactProxy';
+import ApiGetJson from './R110_ApiGetJson';
+import ApiPostJson from './R111_ApiPostJson';
 
 class App extends Component {
   render () {
@@ -30,6 +32,8 @@ class App extends Component {
         <Route exact path='/FloationPopulationList' element={<FloationPopulationList/>} />
         <Route exact path='/rechartsSimpleLineChart' Component={rechartsSimpleLineChart} />
         <Route exact path='/reactProxy' Component={reactProxy} />
+        <Route exact path='/ApiGetJson' Component={ApiGetJson} />
+        <Route exact path='/ApiPostJson' Component={ApiPostJson} />
         </Routes>
         <Footer/>
       </div>

@@ -11,3 +11,9 @@ pakage.json 추가
     "last 1 safari version"
   ],
   "proxy" : "http://127.0.0.1:5000"
+
+여러개 명령어 동시에 실행 
+npm install --save concurrently
+
+nodemon node 폴더의 소스가 수정될 때 자동으로 node서버 재시작
+npm install -g nodemon
