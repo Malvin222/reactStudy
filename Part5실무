@@ -17,3 +17,78 @@ npm install --save concurrently
 
 nodemon node 폴더의 소스가 수정될 때 자동으로 node서버 재시작
 npm install -g nodemon
+
+AWS 
+rds 생성
+엔진: MySQL , 프리티어, DB식별자:react200, 스토리지 자동조정 활성화 해제, 퍼블릭 엑세스 허용 체크, 데이터베이스포트 3306
+보안그룹: 인바운드규칙 MYSQL/Aurora 3306
+MySQL workbench
+react 스키마 생성,
+
+react 스키마 사용
+use react 
+
+create table `react_swtool`(
+	`swt_code` varchar(100) NOT NULL COMMENT 'SW를 코드',
+    `swt_toolname` varchar(100) DEFAULT null comment '를 이용',
+    `swt_function` text COMMENT '상세기능',
+    `swt_imagepath` varchar(100) DEFAULT null comment '라벨 이미지 경로',
+    `swt_big_imgpath` varchar(100) DEFAULT null comment '메인 이미지 경로',
+    `swt_comments` text COMMENT '설명',
+    `swt_demo site` varchar(100) DEFAULT null comment '메모 URL',
+    `swt_manual_path` varchar(100) DEFAULT null comment '메뉴얼 파일 경로',
+    `swt_github_url` varchar(100) DEFAULT null comment 'Github URL',
+    `reg_date` varchar(100) DEFAULT null comment '등록날짜',
+    `reg_user` varchar(100) DEFAULT null comment '등록자',
+    `update_date` varchar(100) DEFAULT null comment '수정날짜',
+    `update_user` varchar(100) DEFAULT null comment '수정자',
+    PRIMARY KEY(`swt_code`)
+)
+
+한국시간 설정 
+rds 콘솔 접속, 파라미터 그룹 생성
+파라미터 그룹 패밀리: mysql8.0
+그룹이름 : reactparam
+time_zone : Asia/Seoul
+Rds DB 수정
+추가 구성 -> DB파라미터 그룹 reactparam -> 즉시적용
+인스턴스 재부팅
+
+한글설정 및 safe 모드 해제
+세이프모드 해제, 딜리트 업데이트 가능
+SET SQL_SAFE_UPDATES = 0;
+
+한글 깨짐 해결
+ALTER TABLE react.react_swtool convert to charset utf8;
+
+delete from react_swtool
+
+더미데이터
+insert into `react_swtool` value('usw2020010100000'
+											,'툴 이름1'
+											,'상세 기능1'
+                      ,'2020010100000_라벨 이미지.png'
+                      ,'2020010100000_메인이미지.png'
+                      ,'설명1'
+                      ,'메모 URL1'
+                      ,'2020010100000_메뉴얼 파일.docs'
+                      ,'Githyb URL1'
+                      ,'2020010100000'
+                      ,'userA1'
+                      ,'2020010100000'
+                      ,'userB1');
+insert into `react_swtool` value('usw2020010200000'
+											,'툴 이름2'
+											,'상세 기능2'
+                      ,'2020010200000_라벨 이미지.png'
+                      ,'2020010200000_메인이미지.png'
+                      ,'설명2'
+                      ,'메모 URL2'
+                      ,'2020010200000_메뉴얼 파일.docs'
+                      ,'Githyb URL2'
+                      ,'2020010200000'
+                      ,'userA2'
+                      ,'2020010200000'
+                      ,'userB2');
+                                            
+select * from react_swtool;
