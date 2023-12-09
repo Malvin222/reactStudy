@@ -18,6 +18,7 @@ import reactThrottle from './R095_reactThrottle';
 import reactProxy from './R109_reactProxy';
 import ApiGetJson from './R110_ApiGetJson';
 import ApiPostJson from './R111_ApiPostJson';
+import SoftwareList from './SoftwareToolsManager/SoftwareList';
 
 class App extends Component {
   render () {
@@ -34,6 +35,7 @@ class App extends Component {
         <Route exact path='/reactProxy' Component={reactProxy} />
         <Route exact path='/ApiGetJson' Component={ApiGetJson} />
         <Route exact path='/ApiPostJson' Component={ApiPostJson} />
+        <Route exact path='/SoftwareList' Component={SoftwareList} />
         </Routes>
         <Footer/>
       </div>

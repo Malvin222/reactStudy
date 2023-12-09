@@ -18,6 +18,8 @@ npm install --save concurrently
 nodemon node 폴더의 소스가 수정될 때 자동으로 node서버 재시작
 npm install -g nodemon
 
+yarn dev
+
 AWS 
 rds 생성
 엔진: MySQL , 프리티어, DB식별자:react200, 스토리지 자동조정 활성화 해제, 퍼블릭 엑세스 허용 체크, 데이터베이스포트 3306
@@ -92,3 +94,12 @@ insert into `react_swtool` value('usw2020010200000'
                       ,'userB2');
                                             
 select * from react_swtool;
+
+body-parser : body의 파리미터 추출해서 사용가능
+npm install --save body-parser
+
+mysql 패키지 : CRUD 쿼리 호출 가능
+npm install --save mysql
+
+mybatis-mapper : java코드에서 sql 코드를 분리해 별도의 파일로 관리할 수 있음
+npm install --save mybatis-mapper
