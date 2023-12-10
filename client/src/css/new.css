@@ -1,4 +1,6 @@
+@import url(/css/dpl/sce/NotoSansKR-Hestia.css);
 
+/**** Common ************************************************/
 * {max-height:1000000px;margin:0;padding:0;}
 img, fieldset, button {border:none;}
 hr, button img {display:none;}
@@ -747,3 +749,7 @@ td.check_ty1 label:after{margin-top: 7px;}
 
 
 .mb0{margin-bottom: 0 !Important;}
+
+.border_validate_err {
+    border: 1px solid red !important;
+}

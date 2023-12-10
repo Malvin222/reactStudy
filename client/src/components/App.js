@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Routes } from "react-router-dom";
-import rechartsSimpleLineChart from './Floationg_population/recharsSimpleLineChart';
+import { Route } from "react-router-dom";
+import cookie from 'react-cookies';
+import axios from "axios";
+
 // css
 import '../css/new.css';
 
@@ -11,32 +13,74 @@ import HeaderAdmin from './Header/Header admin';
 import Footer from './Footer/Footer';
 
 // login
-import FloationPopulationList from './Floationg_population/floationPopulationList';
 import LoginForm from './LoginForm';
-import reactRouter2 from './R089_reactRouter2';
-import reactThrottle from './R095_reactThrottle';
-import reactProxy from './R109_reactProxy';
-import ApiGetJson from './R110_ApiGetJson';
-import ApiPostJson from './R111_ApiPostJson';
-import SoftwareList from './SoftwareToolsManager/SoftwareList';
+
+import SoftwareList from './SoftwareToolsManage/SoftwareList';
+import SoftwareView from './SoftwareToolsManage/SoftwareView';
+
+import Register from './Register/Register';
+import PwChangeForm from './PwChangeForm';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  componentDidMount() {
+    if(window.location.pathname.indexOf('/PwChangeForm') == -1){
+      axios.post('/api/LoginForm?type=SessionConfirm', {
+        token1 : cookie.load('userid') 
+        , token2 : cookie.load('username') 
+      })
+      .then( response => {
+          this.state.userid = response.data.token1
+          let password = cookie.load('userpassword')
+          if(password !== undefined){
+            axios.post('/api/LoginForm?type=SessionSignin', {
+              is_Email: this.state.userid,
+              is_Token : password
+            })
+            .then( response => {
+              if(response.data.json[0].useremail === undefined){
+                this.noPermission()
+              }
+            })
+            .catch( error => {
+              this.noPermission()
+            });
+          }else{
+            this.noPermission()
+          }
+      })
+      .catch( response => this.noPermission());
+    }
+  }
+
+  noPermission = (e) => {
+    if(window.location.hash != 'nocookie'){
+      this.remove_cookie();
+      window.location.href = '/login/#nocookie';
+    }
+  };
+
+  remove_cookie = (e) => {
+    cookie.remove('userid', { path: '/'});
+    cookie.remove('username', { path: '/'});
+    cookie.remove('userpassword', { path: '/'});
+  }
+
   render () {
     return (
       <div className="App">
-        <HeaderAdmin/>
-        {/* react18 이상 라우터 6버전이상 Routes로 감싸줘야함 */}
-        <Routes>
-        <Route exact path='/' element={<LoginForm/>} />
-        <Route exact path='/Throttle' Component={reactThrottle} />
-        <Route exact path='/reactRouter2' Component={reactRouter2} />
-        <Route exact path='/FloationPopulationList' element={<FloationPopulationList/>} />
-        <Route exact path='/rechartsSimpleLineChart' Component={rechartsSimpleLineChart} />
-        <Route exact path='/reactProxy' Component={reactProxy} />
-        <Route exact path='/ApiGetJson' Component={ApiGetJson} />
-        <Route exact path='/ApiPostJson' Component={ApiPostJson} />
-        <Route exact path='/SoftwareList' Component={SoftwareList} />
-        </Routes>
+        <HeaderAdmin/> 
+        <Route exact path='/' component={LoginForm} />
+        <Route path='/login' component={LoginForm} />
+        <Route path='/SoftwareList' component={SoftwareList} />
+        <Route path='/SoftwareView/:swtcode' component={SoftwareView} />
+        <Route path='/register' component={Register} />
+        <Route path='/PwChangeForm/:email/:token' component={PwChangeForm} />
         <Footer/>
       </div>
     );
